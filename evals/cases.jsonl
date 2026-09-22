@@ -1,0 +1,3 @@
+{"id":"echo-basico","model":"mock-echo","prompt":"Explique o objetivo deste laboratório.","expected_contains":"Explique o objetivo deste laboratório."}
+{"id":"incidente-sintetico","model":"mock-ops","prompt":"Existe uma falha no serviço de inferência.","expected_contains":"incidente operacional"}
+{"id":"solicitacao-sintetica","model":"mock-ops","prompt":"Liste o estado atual da plataforma.","expected_contains":"solicitação operacional"}

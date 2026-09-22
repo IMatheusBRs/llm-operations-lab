@@ -1,0 +1,25 @@
+services:
+  api:
+    build: .
+    environment:
+      APP_CREDENTIALS_JSON: >-
+        {"demo-app":{"api_key":"demo-key-local-only","allowed_models":["mock-echo","mock-ops"],"requests_per_minute":30,"max_concurrency":2,"timeout_seconds":2.0}}
+      LLM_PROVIDER: mock
+      PURCHASE_ORDER_BASE_URL: http://127.0.0.1:8000/mock-sap/odata/v1
+      OTEL_ENABLED: "false"
+      LANGFUSE_ENABLED: "false"
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    command: ["--config.file=/etc/prometheus/prometheus.yml"]
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    depends_on:
+      - api
+    restart: unless-stopped
+

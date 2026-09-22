@@ -1,0 +1,26 @@
+{
+  "timestamp_utc": "2026-09-22T00:06:14.274573+00:00",
+  "environment": {
+    "python": "3.13.14",
+    "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.43",
+    "base_url": "http://127.0.0.1:8000"
+  },
+  "parameters": {
+    "requests": 20,
+    "concurrency": 2
+  },
+  "results": {
+    "status_counts": {
+      "200": 20
+    },
+    "elapsed_seconds": 0.0239,
+    "requests_per_second": 835.82,
+    "latency_ms": {
+      "min": 1.099,
+      "mean": 1.904,
+      "p95": 2.904,
+      "max": 11.331
+    }
+  },
+  "notes": "Mede apenas o provedor mock local; não representa desempenho de LLM real."
+}
